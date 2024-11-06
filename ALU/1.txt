@@ -1,0 +1,39 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+use IEEE.STD_LOGIC_ARITH.all; 
+use IEEE.STD_LOGIC_UNSIGNED.ALL; 
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--use IEEE.NUMERIC_STD.ALL;
+
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx primitives in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
+
+entity vr1 is
+    Port ( a : in  STD_LOGIC_VECTOR (3 downto 0);
+           b : in  STD_LOGIC_VECTOR (3 downto 0);
+           op : in  STD_LOGIC_VECTOR (2 downto 0);
+           c : out  STD_LOGIC_VECTOR (4 downto 0));
+end vr1;
+
+architecture Behavioral of vr1 is
+
+begin
+Process(a,b,Op) 
+Begin 
+Case op is 
+When "000" =>  
+c <= ('0' & a) + ('0' & b); 
+When "001" => c <= ('0' & a) - ('0' & b); 
+When "010" => c <= ('0' & a) AND ('0' & b); 
+When "011" => c <= ('0' & a) OR ('0' & b); 
+When "100" => c <= ('0' & a) XOR ('0' & b); 
+When "101" => c <= ('0' & a) NAND ('0' & b); 
+When "110" => c <= ('0' & a) XNOR ('0' & b); 
+When others => c <= '0' & (not a); 
+End case; 
+End process;
+
+end Behavioral;

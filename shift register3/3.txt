@@ -1,0 +1,29 @@
+library IEEE;
+use IEEE.STD_LOGIC_1164.ALL;
+-- Uncomment the following library declaration if using
+-- arithmetic functions with Signed or Unsigned values
+--use IEEE.NUMERIC_STD.ALL;
+-- Uncomment the following library declaration if instantiating
+-- any Xilinx primitives in this code.
+--library UNISIM;
+--use UNISIM.VComponents.all;
+entity shift is
+    Port ( clk, clr, lin, rin : in  STD_LOGIC;
+           s : in  STD_LOGIC_VECTOR (1 downto 0);
+           d : in  STD_LOGIC_VECTOR (3 downto 0);
+           q : out  STD_LOGIC_VECTOR (3 downto 0));
+end shift;
+architecture Behavioral of shift is
+begin
+process(clk, clr, lin, rin, s, d)
+begin
+if(clr='0') then q<="0000"
+elsif(clk'event and clk='1') then
+if(s="00") then q<=q;
+elsif(s="01") then q<=rin&q(3 downto 1);
+elsif(s="10") then q<=q(2 downto 0) &iin;
+elsif(s="11" then q<=d;
+end if;
+end if;
+end process;
+end Behavioral;

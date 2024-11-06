@@ -1,0 +1,17 @@
+ALU 4 BIT #SW 0 to SW 3 
+net "a" LOC = "P75"; 
+net "a" LOC = "P64"; 
+net "a" LOC = "P58"; 
+net "a" LOC = "P6";
+ #SW 8 to SW 11 net "b" LOC = "P116";
+ net "b" LOC = "P67"; 
+net "b" LOC = "P61"; 
+net "b" LOC = "P8"; 
+#SW 15 to SW 12 net "op" LOC = "P126"; 
+net "op" LOC = "P133"; 
+net "op" LOC = "P139";
+ALU UCF FILE # LI 1 to LI 5 net "c" LOC = "P2"; 
+net "c" LOC = "P142"; 
+net "c" LOC = "P138"; 
+net "c" LOC = "P134"; 
+net "c" LOC = "P124";
